@@ -1,3 +1,4 @@
+import ThemeSwitcher from '../ThemeSwitcher';
 import styles from './styles.module.scss';
 
 function Header() {
@@ -6,7 +7,9 @@ function Header() {
       <div className={styles['header__container']}>
         <h1>PRODUCT CATALOG</h1>
 
-        <div>cccc</div>
+        <div>
+          <ThemeSwitcher />
+        </div>
       </div>
     </header>
   );

@@ -1,0 +1,42 @@
+.wrapper {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: auto;
+  min-height: 30px;
+}
+
+.wrapperInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + .slider::before {
+    transform: translateX($spacing-28);
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  transition: $transition;
+  border-radius: $radius-40;
+  border: 1px solid var(--color-text);
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: $spacing-24;
+    height: $spacing-24;
+    left: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: 1px solid var(--color-text);
+    transition: $transition;
+    border-radius: $radius-50;
+  }
+}
