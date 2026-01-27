@@ -1,0 +1,123 @@
+.card {
+  display: flex;
+  height: 500px;
+  flex-direction: column;
+  background-color: $color-background-card;
+  color: $color-text-primary;
+  border: 1px solid $color-border-card;
+  border-radius: $radius-40;
+  overflow: hidden;
+  max-width: $layout-card-width;
+  margin: $spacing-20 auto;
+  font-size: $font-size-16;
+
+  @media (max-width: $breakpoints-mobile) {
+    font-size: $font-size-12;
+    margin: $spacing-8 auto;
+  }
+  &__image-wrapper {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: $spacing-8;
+  }
+
+  &__image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    flex: 0 0 50%;
+    padding: $spacing-16;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $breakpoints-mobile) {
+      padding: $spacing-16 $spacing-8;
+    }
+  }
+
+  &__title {
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-8;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__description {
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: $font-size-12;
+    font-weight: $font-weight-light;
+    margin-bottom: $spacing-16;
+    color: var(--color-text-hover);
+    overflow: hidden;
+
+    @media (max-width: $breakpoints-mobile) {
+      -webkit-line-clamp: 2;
+      margin-bottom: $spacing-8;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-16;
+    flex-shrink: 0;
+  }
+
+  &__price {
+    font-weight: $font-weight-bold;
+    color: var(--color-text);
+  }
+
+  &__stock-status {
+    padding: $spacing-8;
+    border-radius: $radius-10;
+    font-weight: $font-weight-bold;
+    color: $color-success-text;
+
+    &--available {
+      background-color: $color-success;
+      animation: stockPulse 1.5s infinite ease-out;
+    }
+
+    &--unavailable {
+      background-color: $color-error;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: $spacing-16;
+    background-color: $color-hover;
+    color: $color-text-primary;
+    border: none;
+    border-radius: $radius-40;
+    flex-shrink: 0;
+
+    cursor: pointer;
+    transition: background-color $transition;
+
+    &:disabled {
+      background-color: $color-disabled;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+}
+
+@keyframes stockPulse {
+  0% {
+    box-shadow: 0 0 0px 0px rgba($color-success, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0px 8px rgba($color-success, 0);
+  }
+}
