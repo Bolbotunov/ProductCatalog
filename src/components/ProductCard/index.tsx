@@ -1,17 +1,16 @@
+import { Product } from '@/types';
+
+import Button from '../Button';
+import { ButtonTypes } from '../Button/types';
 import styles from './styles.module.scss';
 
-const mockProduct = {
-  id: 1,
-  title: 'Clear Glass',
-  price: 19.99,
-  description:
-    'A beautiful clear glass ornament with a purple interior scene. Perfect for harmony and peace keeping this holiday season.',
-  image: 'URL',
-  isInStock: true,
-};
+interface Props {
+  product: Product;
+}
 
-function ProductCard() {
-  const { title, price, description, image, isInStock } = mockProduct;
+function ProductCard({ product }: Props) {
+  const { title, description, price, isInStock, image } = product;
+  console.log(product);
 
   return (
     <div className={styles.card}>
@@ -33,9 +32,13 @@ function ProductCard() {
             {isInStock ? 'in stock' : 'out of stock'}
           </span>
         </div>
-        <button disabled={!isInStock} className={styles['card__button']}>
+        <Button
+          type={ButtonTypes.APPLY}
+          onClick={() => console.log(1)}
+          disabled={!isInStock}
+        >
           Add to cart
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,0 +1,26 @@
+.apply {
+  background-color: $color-success;
+}
+
+.cancel {
+  background-color: $color-error;
+}
+
+.button {
+  width: 100%;
+  padding: $spacing-16;
+  background-color: $color-hover;
+  color: $color-text-primary;
+  border: none;
+  border-radius: $radius-40;
+  flex-shrink: 0;
+
+  cursor: pointer;
+  transition: background-color $transition;
+
+  &:disabled {
+    background-color: $color-disabled;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}

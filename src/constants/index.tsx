@@ -15,3 +15,5 @@ export const routesConfig = [
   },
   { path: PageRoutes.NOTFOUND_PAGE, element: <NotFoundPage /> },
 ];
+
+export const URL_API = 'https://fakestoreapi.com/';
