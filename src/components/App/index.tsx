@@ -1,9 +1,12 @@
 import ContentLayout from '../ContentLayout';
+import ThemeProvider from '../ThemeProvider';
 
 function App() {
   return (
     <>
-      <ContentLayout />
+      <ThemeProvider>
+        <ContentLayout />
+      </ThemeProvider>
     </>
   );
 }

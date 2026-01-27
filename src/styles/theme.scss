@@ -1,13 +1,13 @@
 :root {
-  --color-bg: #{rgb(227, 236, 224)};
-  --color-text: #{rgba(0, 0, 0, 1)};
-  --color-hover: #{rgb(110, 124, 95)};
-  --color-text-hover: #{rgb(77, 78, 68)};
+  --color-bg: rgb(227, 236, 224);
+  --color-text: rgba(0, 0, 0, 1);
+  --color-hover: rgb(110, 124, 95);
+  --color-text-hover: rgb(77, 78, 68);
 }
 
-[data-theme='dark'] {
-  --color-bg: #{rgba(3, 3, 4, 1)};
-  --color-text: #{rgba(255, 255, 255, 1)};
-  --color-hover: #{rgba(0, 206, 44, 1)};
-  --color-text-hover: #{rgb(200, 200, 200)};
+[data-theme='dark-theme'] {
+  --color-bg: rgba(3, 3, 4, 1);
+  --color-text: rgba(255, 255, 255, 1);
+  --color-hover: rgba(0, 206, 44, 1);
+  --color-text-hover: rgb(200, 200, 200);
 }

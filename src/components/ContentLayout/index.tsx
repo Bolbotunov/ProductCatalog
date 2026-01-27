@@ -1,7 +1,10 @@
+import Header from '../Header';
+
 function ContentLayout() {
   return (
     <div className="appContainer">
-      <main></main>
+      <Header />
+      <main>main</main>
     </div>
   );
 }
