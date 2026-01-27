@@ -1,0 +1,36 @@
+@use './theme.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight-light;
+}
+
+html,
+body {
+  height: 100%;
+  transition: background-color $transition;
+}
+
+.appContainer {
+  @include mixins.flexCenter();
+
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-background;
+  color: $color-text-primary;
+}
+
+main {
+  width: 100%;
+  flex: 1;
+  max-width: $layout-container-1440;
+  padding: 0 $spacing-96;
+  display: flex;
+  flex-direction: column;
+}

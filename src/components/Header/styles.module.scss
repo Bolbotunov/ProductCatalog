@@ -1,0 +1,16 @@
+.header {
+  @include mixins.flexCenter();
+
+  text-align: center;
+  padding: $spacing-40 $spacing-96;
+  width: 100%;
+  height: $spacing-96;
+  box-sizing: border-box;
+
+  &__container {
+    @include mixins.flexSpaceBetween();
+
+    max-width: $layout-container-1440;
+    width: 100%;
+  }
+}
