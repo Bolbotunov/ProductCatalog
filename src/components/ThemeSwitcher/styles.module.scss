@@ -1,9 +1,14 @@
 .wrapper {
   position: relative;
   display: inline-block;
-  width: 54px;
+  width: $spacing-56;
   height: auto;
-  min-height: 30px;
+  min-height: $spacing-32;
+
+  @media (max-width: $breakpoints-mobile) {
+    width: $spacing-50;
+    min-height: $spacing-26;
+  }
 }
 
 .wrapperInput {
@@ -22,7 +27,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 1px;
+  bottom: 3px;
   transition: $transition;
   border-radius: $radius-40;
   border: 1px solid var(--color-text);
@@ -30,13 +35,17 @@
   &::before {
     position: absolute;
     content: '';
-    width: $spacing-24;
-    height: $spacing-24;
+    width: $spacing-26;
+    height: $spacing-26;
     left: 0;
     bottom: 0;
     background-color: transparent;
     border: 1px solid var(--color-text);
     transition: $transition;
     border-radius: $radius-50;
+    @media (max-width: $breakpoints-mobile) {
+      width: $spacing-20;
+      height: $spacing-20;
+    }
   }
 }

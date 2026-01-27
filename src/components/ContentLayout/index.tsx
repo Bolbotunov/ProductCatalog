@@ -1,10 +1,14 @@
+import { Outlet } from 'react-router-dom';
+
 import Header from '../Header';
 
 function ContentLayout() {
   return (
     <div className="appContainer">
       <Header />
-      <main>main</main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   );
 }

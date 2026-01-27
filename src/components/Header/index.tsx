@@ -1,15 +1,25 @@
+import { useState } from 'react';
+
+import Burger from '../Burger';
+import Navigation from '../Navigation';
 import ThemeSwitcher from '../ThemeSwitcher';
 import styles from './styles.module.scss';
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleMenuState = (state: boolean) => () => setIsOpen(state);
+
   return (
     <header className={styles.header}>
       <div className={styles['header__container']}>
-        <h1>PRODUCT CATALOG</h1>
-
-        <div>
-          <ThemeSwitcher />
+        <h1 className={styles['header__logo']}>PRODUCT CATALOG</h1>
+        <div
+          className={`${styles['header__nav']} ${isOpen ? styles['header__nav--open'] : ''}`}
+        >
+          <Navigation closeMenu={handleMenuState(false)} />
         </div>
+        <ThemeSwitcher />
+        <Burger isOpen={isOpen} onClick={handleMenuState(!isOpen)} />
       </div>
     </header>
   );
