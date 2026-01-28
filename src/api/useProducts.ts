@@ -1,23 +1,26 @@
-import { CACHE_TIME, URL_API } from '@/constants';
+import {
+  CACHE_TIME_HOURS,
+  ENDPOINT_CATEGORY,
+  ENDPOINT_PRODUCT,
+} from '@/constants';
 import { Product } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 
-export function useProducts() {
-  return useQuery({
-    queryKey: ['products'],
-    queryFn: async () => {
-      const res = await fetch(`${URL_API}products`);
-      if (!res.ok) {
-        throw new Error('Failed to fetch products');
-      }
-      const data: Product[] = await res.json();
+import { getResponse } from './getResponse';
 
-      return data.map((p) => ({
-        ...p,
-        isInStock: Math.random() > 0.2,
-      }));
-    },
-    staleTime: CACHE_TIME,
+async function fetchProducts(category: string) {
+  const path =
+    category === 'all' ? ENDPOINT_PRODUCT : `${ENDPOINT_CATEGORY}${category}`;
+  const data = await getResponse<Product[]>(path);
+
+  return data.map((p) => ({ ...p, isInStock: Math.random() > 0.2 }));
+}
+
+export function useProducts(category: string) {
+  return useQuery({
+    queryKey: ['products', category],
+    queryFn: () => fetchProducts(category),
+    gcTime: CACHE_TIME_HOURS,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
   });

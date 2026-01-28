@@ -10,7 +10,6 @@ interface Props {
 
 function ProductCard({ product }: Props) {
   const { title, description, price, isInStock, image } = product;
-  console.log(product);
 
   return (
     <div className={styles.card}>

@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { routesConfig } from '@/constants';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import ContentLayout from '../ContentLayout';
 import ThemeProvider from '../ThemeProvider';
+import { routesConfig } from './routesConfig';
 
 function App() {
   const queryClient = new QueryClient();
