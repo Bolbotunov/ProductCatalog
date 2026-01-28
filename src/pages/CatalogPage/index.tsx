@@ -1,45 +1,64 @@
-import { useState } from 'react';
-
-import { useProducts } from '@/api/useProducts';
+import CatalogFilters from '@/components/CatalogFilters';
 import Pagination from '@/components/Pagination';
 import ProductCard from '@/components/ProductCard';
 import { COUNT_CARDS_PAGE } from '@/constants';
+import { useCatalog } from '@/hooks/useCatalog';
 
 import styles from './styles.module.scss';
 
 function CatalogPage() {
-  const [page, setPage] = useState(1);
-  const { data, isLoading, isError } = useProducts();
+  const {
+    categories,
+    processedProducts,
+    paginated,
+    category,
+    search,
+    sort,
+    page,
+    isLoading,
+    isError,
+    setCategory,
+    setSort,
+    setPage,
+    handleSearchChange,
+  } = useCatalog();
 
-  const start = (page - 1) * COUNT_CARDS_PAGE;
-  const end = start + COUNT_CARDS_PAGE;
-
-  const paginatedProducts = data?.slice(start, end) ?? [];
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError || !data) {
-    return <div>Ошибка загрузки товаров</div>;
-  }
+  if (isError) return <div>Ошибка загрузки товаров</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
-      <div className={styles.catalog}>
-        {paginatedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-      <Pagination
-        total={data.length}
-        perPage={COUNT_CARDS_PAGE}
-        current={page}
-        onChange={(p) => {
-          setPage(p);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+      <CatalogFilters
+        search={search}
+        onSearchChange={handleSearchChange}
+        sort={sort}
+        setSort={setSort}
+        category={category}
+        categories={categories ?? []}
+        onCategoryChange={setCategory}
       />
+
+      {processedProducts.length === 0 ? (
+        <div>We don't have such products</div>
+      ) : (
+        <>
+          <div className={styles.catalog}>
+            {paginated.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <Pagination
+            total={processedProducts.length}
+            perPage={COUNT_CARDS_PAGE}
+            current={page}
+            onChange={(page) => {
+              setPage(page);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        </>
+      )}
     </>
   );
 }

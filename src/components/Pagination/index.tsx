@@ -18,13 +18,13 @@ export default function Pagination({
 
   return (
     <div className={styles.pagination}>
-      {paginationBtns.map((p) => (
+      {paginationBtns.map((page) => (
         <button
-          key={p}
-          onClick={() => onChange(p)}
-          className={`${styles.pageButton} ${p === current ? styles.active : ''}`}
+          key={page}
+          onClick={() => onChange(page)}
+          className={`${styles.pageButton} ${page === current ? styles.active : ''}`}
         >
-          {p}
+          {page}
         </button>
       ))}
     </div>

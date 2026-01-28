@@ -1,0 +1,12 @@
+.controlers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-12;
+  width: 100%;
+  max-width: $layout-container-520;
+
+  @media (max-width: $breakpoints-mobile-large) {
+    flex-direction: column;
+  }
+}

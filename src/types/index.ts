@@ -23,3 +23,17 @@ export interface Product {
   image: string;
   isInStock?: boolean;
 }
+
+export enum SortOptions {
+  PriceUp = 'Price ↑',
+  PriceDown = 'Price ↓',
+  TitleUp = 'Title A-Z',
+  TitleDown = 'Title Z-A',
+}
+
+export const SORT_OPTIONS: SortOptions[] = [
+  SortOptions.PriceUp,
+  SortOptions.PriceDown,
+  SortOptions.TitleUp,
+  SortOptions.TitleDown,
+];
