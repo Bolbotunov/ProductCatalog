@@ -12,7 +12,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles['header__container']}>
-        <h1 className={styles['header__logo']}>PRODUCT CATALOG</h1>
+        <h1 className={styles['header__logo']}>P.Catalog</h1>
         <div
           className={`${styles['header__nav']} ${isOpen ? styles['header__nav--open'] : ''}`}
         >

@@ -13,3 +13,13 @@ export enum PageRoutes {
   CART_PAGE = '/cart',
   NOTFOUND_PAGE = '*',
 }
+
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  isInStock?: boolean;
+}

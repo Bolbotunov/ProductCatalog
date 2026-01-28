@@ -1,13 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { routesConfig } from '@/constants';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import ContentLayout from '../ContentLayout';
 import ThemeProvider from '../ThemeProvider';
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <BrowserRouter>
           <Routes>
@@ -19,7 +22,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
-    </>
+    </QueryClientProvider>
   );
 }
 

@@ -2,13 +2,14 @@
   @include mixins.flexCenter();
 
   text-align: center;
-  padding: $spacing-36 $spacing-96;
+  padding: $spacing-16 $spacing-48;
   width: 100%;
   height: $spacing-96;
   box-sizing: border-box;
 
   &__logo {
     position: relative;
+    font-family: $font-family-logo;
     z-index: 101;
     @media (max-width: $breakpoints-mobile) {
       max-width: 150px;

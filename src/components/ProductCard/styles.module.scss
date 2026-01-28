@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  height: 500px;
+  height: 480px;
   flex-direction: column;
   background-color: $color-background-card;
   color: $color-text-primary;
@@ -8,15 +8,22 @@
   border-radius: $radius-40;
   overflow: hidden;
   max-width: $layout-card-width;
-  margin: $spacing-20 auto;
+  margin: $spacing-20 0;
+  width: 100%;
   font-size: $font-size-16;
+  transition: $transition;
 
-  @media (max-width: $breakpoints-mobile) {
+  @media (max-width: $breakpoints-mobile-large) {
     font-size: $font-size-12;
-    margin: $spacing-8 auto;
+    margin: $spacing-20 0;
+  }
+
+  &:hover {
+    border: 1px solid $color-success;
+    cursor: pointer;
   }
   &__image-wrapper {
-    flex: 0 0 50%;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,16 +38,23 @@
   }
 
   &__content {
-    flex: 0 0 50%;
-    padding: $spacing-16;
+    flex: 1;
+    padding: 0 $spacing-16;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    @media (max-width: $breakpoints-mobile) {
-      padding: $spacing-16 $spacing-8;
+    @media (max-width: $breakpoints-tablet-large) {
+      padding: $spacing-8;
     }
   }
 
   &__title {
+    font-size: $font-size-16;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 1.2;
+
     font-weight: $font-weight-bold;
     margin-bottom: $spacing-8;
     overflow: hidden;
@@ -48,10 +62,12 @@
   }
 
   &__description {
-    flex: 1;
+    height: 60px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    line-height: 1.5;
+    max-height: calc(1.5em * 3);
     font-size: $font-size-12;
     font-weight: $font-weight-light;
     margin-bottom: $spacing-16;
@@ -78,10 +94,14 @@
   }
 
   &__stock-status {
-    padding: $spacing-8;
+    padding: $spacing-4;
     border-radius: $radius-10;
     font-weight: $font-weight-bold;
     color: $color-success-text;
+    font-size: $font-size-12;
+    @media (max-width: $breakpoints-tablet) {
+      font-size: $font-size-10;
+    }
 
     &--available {
       background-color: $color-success;
@@ -90,25 +110,6 @@
 
     &--unavailable {
       background-color: $color-error;
-    }
-  }
-
-  &__button {
-    width: 100%;
-    padding: $spacing-16;
-    background-color: $color-hover;
-    color: $color-text-primary;
-    border: none;
-    border-radius: $radius-40;
-    flex-shrink: 0;
-
-    cursor: pointer;
-    transition: background-color $transition;
-
-    &:disabled {
-      background-color: $color-disabled;
-      cursor: not-allowed;
-      opacity: 0.6;
     }
   }
 }
