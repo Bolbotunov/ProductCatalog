@@ -17,3 +17,5 @@ export const routesConfig = [
 ];
 
 export const URL_API = 'https://fakestoreapi.com/';
+export const COUNT_CARDS_PAGE = 12;
+export const CACHE_TIME = 60000;

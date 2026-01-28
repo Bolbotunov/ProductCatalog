@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-8;
+  margin: $spacing-16 0;
+}
+
+.pageButton {
+  padding: $spacing-8 $spacing-16;
+  border-radius: $radius-10;
+  border: 1px solid var(--color-hover);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: var(--color-hover);
+    color: var(--color-text-primary);
+  }
+}
+
+.active {
+  background-color: var(--color-hover);
+  color: $color-success-text;
+}

@@ -1,4 +1,4 @@
-import { URL_API } from '@/constants';
+import { CACHE_TIME, URL_API } from '@/constants';
 import { Product } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 
@@ -17,5 +17,8 @@ export function useProducts() {
         isInStock: Math.random() > 0.2,
       }));
     },
+    staleTime: CACHE_TIME,
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 }
