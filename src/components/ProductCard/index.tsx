@@ -26,7 +26,12 @@ function ProductCard({ product }: ProductCardProps) {
   return (
     <div className={styles.card}>
       <div className={styles['card__image-wrapper']}>
-        <img src={image} alt={title} className={styles['card__image']} />
+        <img
+          src={image}
+          alt={title}
+          className={styles['card__image']}
+          loading="lazy"
+        />
       </div>
       <div className={styles['card__content']}>
         <h2 className={styles['card__title']}>{title}</h2>

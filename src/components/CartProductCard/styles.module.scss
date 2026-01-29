@@ -46,3 +46,8 @@
   align-items: center;
   gap: $spacing-16;
 }
+
+.count {
+  @include mixins.flexCenter();
+  width: $spacing-16;
+}

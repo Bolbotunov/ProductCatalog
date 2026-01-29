@@ -21,6 +21,7 @@ export function useProducts(category: string) {
     queryKey: ['products', category],
     queryFn: () => fetchProducts(category),
     gcTime: CACHE_TIME_HOURS,
+    retry: false,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
   });

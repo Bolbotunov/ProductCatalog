@@ -4,6 +4,7 @@
   width: $spacing-56;
   height: auto;
   min-height: $spacing-32;
+  z-index: 100;
 
   @media (max-width: $breakpoints-mobile) {
     width: $spacing-50;

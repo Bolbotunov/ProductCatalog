@@ -31,6 +31,7 @@ const CatalogFilters = ({
   return (
     <div className={styles.controlers}>
       <Input value={search} placeholder="Search..." onChange={onSearchChange} />
+
       <Select value={sort} onChange={handleSortChange} options={SORT_OPTIONS} />
       <Select
         value={category}

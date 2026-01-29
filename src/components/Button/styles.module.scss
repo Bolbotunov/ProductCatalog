@@ -11,6 +11,7 @@
 
   &.apply {
     background-color: $color-success;
+    transition: background-color $transition;
   }
 
   &:disabled {
