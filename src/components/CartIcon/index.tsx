@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
-
 import { useCart } from '@/hooks/useCart';
+
+import styles from './styles.module.scss';
 
 export function CartIcon() {
   const { totalQuantity } = useCart();
 
   return (
-    <Link to="/cart" className="cart-icon">
+    <div className={styles.wrapper}>
       🛒
-      {totalQuantity > 0 && <span className="badge">{totalQuantity}</span>}
-    </Link>
+      <span className={styles['wrapper__badge']}>{totalQuantity || 0}</span>
+    </div>
   );
 }

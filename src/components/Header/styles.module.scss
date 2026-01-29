@@ -52,4 +52,14 @@
       }
     }
   }
+
+  &__cart-mobile {
+    display: none;
+
+    @media (max-width: $breakpoints-tablet) {
+      display: block;
+      position: relative;
+      z-index: 100;
+    }
+  }
 }

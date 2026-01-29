@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Burger from '../Burger';
+import { CartIcon } from '../CartIcon';
 import Navigation from '../Navigation';
 import ThemeSwitcher from '../ThemeSwitcher';
 import styles from './styles.module.scss';
@@ -25,6 +26,9 @@ function Header() {
     <header className={styles.header}>
       <div className={styles['header__container']}>
         <h1 className={styles['header__logo']}>P.Catalog</h1>
+        <div className={styles['header__cart-mobile']}>
+          <CartIcon />
+        </div>
         <div
           className={`${styles['header__nav']} ${isOpen ? styles['header__nav--open'] : ''}`}
         >

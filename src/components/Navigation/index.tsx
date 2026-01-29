@@ -23,7 +23,7 @@ function Navigation({ closeMenu }: NavigationProps) {
                   }
                 >
                   {label}
-                  {icon}
+                  {icon && <span className={styles.icon}>{icon}</span>}
                 </NavLink>
               </li>
             ),
