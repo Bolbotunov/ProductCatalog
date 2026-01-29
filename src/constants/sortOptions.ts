@@ -1,3 +1,8 @@
 import { SortOptions } from '@/types';
 
-export const SORT_OPTIONS = Object.values(SortOptions);
+export const SORT_OPTIONS: SortOptions[] = [
+  SortOptions.PriceUp,
+  SortOptions.PriceDown,
+  SortOptions.TitleUp,
+  SortOptions.TitleDown,
+];

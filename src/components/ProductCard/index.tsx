@@ -1,15 +1,27 @@
+import { useState } from 'react';
+
+import { SUCCESS_DELAY } from '@/constants';
+import { useCart } from '@/hooks/useCart';
 import { Product } from '@/types';
 
 import Button from '../Button';
 import { ButtonTypes } from '../Button/types';
 import styles from './styles.module.scss';
 
-interface Props {
+interface ProductCardProps {
   product: Product;
 }
 
-function ProductCard({ product }: Props) {
+function ProductCard({ product }: ProductCardProps) {
   const { title, description, price, isInStock, image } = product;
+  const [added, setAdded] = useState(false);
+  const { addItem } = useCart();
+
+  const handleAddProduct = (product: Product) => () => {
+    addItem(product);
+    setAdded(true);
+    setTimeout(() => setAdded(false), SUCCESS_DELAY);
+  };
 
   return (
     <div className={styles.card}>
@@ -33,10 +45,10 @@ function ProductCard({ product }: Props) {
         </div>
         <Button
           type={ButtonTypes.APPLY}
-          onClick={() => console.log(1)}
-          disabled={!isInStock}
+          onClick={handleAddProduct(product)}
+          disabled={!isInStock || added}
         >
-          Add to cart
+          {added ? 'Added!' : 'Add to cart'}
         </Button>
       </div>
     </div>

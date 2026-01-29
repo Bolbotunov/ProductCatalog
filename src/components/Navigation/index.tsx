@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import { routesConfig } from '@/constants';
-
+import { routesConfig } from '../App/routesConfig';
 import styles from './styles.module.scss';
 
 interface NavigationProps {
@@ -13,7 +12,7 @@ function Navigation({ closeMenu }: NavigationProps) {
     <nav className={styles.nav}>
       <ul className={styles['nav__list']}>
         {routesConfig.map(
-          ({ path, label }) =>
+          ({ path, label, icon }) =>
             label && (
               <li key={path} className={styles['nav__item']}>
                 <NavLink
@@ -24,6 +23,7 @@ function Navigation({ closeMenu }: NavigationProps) {
                   }
                 >
                   {label}
+                  {icon}
                 </NavLink>
               </li>
             ),

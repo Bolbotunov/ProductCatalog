@@ -4,10 +4,11 @@ export type ButtonType = {
   type: ButtonTypes;
   onClick: () => void;
   children: ReactNode;
-  disabled: boolean;
+  disabled?: boolean;
 };
 
 export enum ButtonTypes {
   APPLY = 'apply',
   CANCEL = 'cancel',
+  COUNTER = 'counter',
 }
