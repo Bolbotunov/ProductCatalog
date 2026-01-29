@@ -2,7 +2,7 @@ import { useCart } from '@/hooks/useCart';
 import { CartItem } from '@/store/cartSlice';
 
 import Button from '../Button';
-import { ButtonSize, ButtonTypes } from '../Button/types';
+import { ButtonTypes } from '../Button/types';
 import styles from './styles.module.scss';
 
 interface CartProductCardProps {
@@ -23,27 +23,19 @@ function CartProductCard({ item }: CartProductCardProps) {
       <div className={styles.info}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.price}>${price}</p>
-
         <div className={styles.controls}>
-          <Button
-            type={ButtonTypes.CANCEL}
-            size={ButtonSize.SMALL}
-            onClick={handleDecreaseCount}
-          >
+          <Button type={ButtonTypes.COUNTER} onClick={handleDecreaseCount}>
             -
           </Button>
           <span>{quantity}</span>
-          <Button
-            type={ButtonTypes.APPLY}
-            size={ButtonSize.SMALL}
-            onClick={handleIncreaseCount}
-          >
+          <Button type={ButtonTypes.COUNTER} onClick={handleIncreaseCount}>
             +
           </Button>
         </div>
-
-        <button onClick={handleRemoveItem}>Delete</button>
       </div>
+      <Button type={ButtonTypes.CANCEL} onClick={handleRemoveItem}>
+        Delete
+      </Button>
     </div>
   );
 }

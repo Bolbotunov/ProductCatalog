@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Burger from '../Burger';
 import Navigation from '../Navigation';
@@ -8,6 +8,18 @@ import styles from './styles.module.scss';
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const handleMenuState = (state: boolean) => () => setIsOpen(state);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isOpen]);
 
   return (
     <header className={styles.header}>

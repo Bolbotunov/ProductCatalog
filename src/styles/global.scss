@@ -43,3 +43,8 @@ h1 {
     font-size: $font-size-20;
   }
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

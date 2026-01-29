@@ -15,9 +15,15 @@
       max-width: 150px;
     }
   }
+
   @media (max-width: $breakpoints-tablet-large) {
     padding: $spacing-20 $spacing-32;
   }
+
+  @media (max-width: $breakpoints-mobile) {
+    padding: $spacing-16;
+  }
+
   &__container {
     @include mixins.flexSpaceBetween();
 
@@ -25,12 +31,13 @@
     width: 100%;
 
     @media (max-width: $breakpoints-mobile) {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 
   &__nav {
     @media (max-width: $breakpoints-tablet) {
+      @include mixins.flexCenter();
       position: fixed;
       top: 0;
       right: -100%;

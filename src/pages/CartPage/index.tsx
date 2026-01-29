@@ -1,6 +1,8 @@
 import CartProductCard from '@/components/CartProductCard';
 import { useCart } from '@/hooks/useCart';
 
+import styles from './styles.module.scss';
+
 function CartPage() {
   const { items, totalAmount } = useCart();
 
@@ -14,7 +16,7 @@ function CartPage() {
         <CartProductCard key={item.id} item={item} />
       ))}
 
-      <h2>Total: ${totalAmount.toFixed(2)}</h2>
+      <p className={styles.total}>Total: ${totalAmount.toFixed(2)}</p>
     </div>
   );
 }
