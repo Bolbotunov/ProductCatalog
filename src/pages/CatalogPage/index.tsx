@@ -1,7 +1,9 @@
 import CatalogFilters from '@/components/CatalogFilters';
 import EmptyState from '@/components/EmptyState';
+import ErrorFallback from '@/components/ErrorFallback';
 import Pagination from '@/components/Pagination';
 import ProductCard from '@/components/ProductCard';
+import Skeleton from '@/components/Skeleton';
 import { COUNT_CARDS_PAGE } from '@/constants';
 import { useCatalog } from '@/hooks/useCatalog';
 
@@ -18,14 +20,27 @@ function CatalogPage() {
     page,
     isLoading,
     isError,
+    error,
+    refetch,
     setCategory,
     setSort,
     setPage,
     handleSearchChange,
   } = useCatalog();
 
-  if (isError) return <div>Ошибка загрузки товаров</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (isError) {
+    return <ErrorFallback error={error} onRetry={() => refetch()} />;
+  }
+
+  if (isLoading) {
+    return (
+      <div className={styles.catalog}>
+        {Array.from({ length: COUNT_CARDS_PAGE }).map((_, i) => (
+          <Skeleton key={i} />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <>
@@ -48,7 +63,6 @@ function CatalogPage() {
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-
           <Pagination
             total={processedProducts.length}
             perPage={COUNT_CARDS_PAGE}

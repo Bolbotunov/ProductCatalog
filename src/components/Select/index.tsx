@@ -1,3 +1,5 @@
+import styles from './styles.module.scss';
+
 type SelectProps = {
   value: string;
   options: string[];
@@ -5,7 +7,11 @@ type SelectProps = {
 };
 
 export const Select = ({ value, options, onChange }: SelectProps) => (
-  <select value={value} onChange={(e) => onChange(e.target.value)}>
+  <select
+    className={styles.select}
+    value={value}
+    onChange={(e) => onChange(e.target.value)}
+  >
     {options.map((value) => (
       <option key={value} value={value}>
         {value}

@@ -15,7 +15,7 @@ export function useCatalog() {
   const [page, setPage] = useState(1);
 
   const { data: categories } = useCategories();
-  const { data, isLoading, isError } = useProducts(category);
+  const { data, isLoading, isError, error, refetch } = useProducts(category);
 
   const debouncedSearch = useDebounce(search, DEBOUNCE_DELAY);
 
@@ -45,6 +45,8 @@ export function useCatalog() {
     page,
     isLoading,
     isError,
+    error,
+    refetch,
     setCategory: (value: string) => {
       setCategory(value);
       setPage(1);

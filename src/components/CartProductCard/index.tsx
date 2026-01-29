@@ -27,7 +27,7 @@ function CartProductCard({ item }: CartProductCardProps) {
           <Button type={ButtonTypes.COUNTER} onClick={handleDecreaseCount}>
             -
           </Button>
-          <span>{quantity}</span>
+          <span className={styles.count}>{quantity}</span>
           <Button type={ButtonTypes.COUNTER} onClick={handleIncreaseCount}>
             +
           </Button>

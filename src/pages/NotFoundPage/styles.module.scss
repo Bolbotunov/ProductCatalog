@@ -1,0 +1,7 @@
+.wrapper {
+  @include mixins.flexCenter();
+
+  flex-direction: column;
+  font-size: $font-size-56;
+  color: $color-error;
+}
