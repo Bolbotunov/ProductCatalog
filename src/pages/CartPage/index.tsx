@@ -1,4 +1,5 @@
 import CartProductCard from '@/components/CartProductCard';
+import EmptyState from '@/components/EmptyState';
 import { useCart } from '@/hooks/useCart';
 
 import styles from './styles.module.scss';
@@ -7,7 +8,7 @@ function CartPage() {
   const { items, totalAmount } = useCart();
 
   if (items.length === 0) {
-    return <div>Your cart is empty</div>;
+    return <EmptyState>Your cart is empty</EmptyState>;
   }
 
   return (

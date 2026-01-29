@@ -1,4 +1,5 @@
 import CatalogFilters from '@/components/CatalogFilters';
+import EmptyState from '@/components/EmptyState';
 import Pagination from '@/components/Pagination';
 import ProductCard from '@/components/ProductCard';
 import { COUNT_CARDS_PAGE } from '@/constants';
@@ -39,7 +40,7 @@ function CatalogPage() {
       />
 
       {processedProducts.length === 0 ? (
-        <div>We don't have such products</div>
+        <EmptyState>We don't have such products</EmptyState>
       ) : (
         <>
           <div className={styles.catalog}>

@@ -32,6 +32,8 @@
   }
 
   &__link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
     transition: $transition;
     color: var(--color-text);
@@ -58,4 +60,10 @@
       }
     }
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-20;
 }
