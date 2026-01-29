@@ -8,12 +8,6 @@ export type ThemeProps = {
   theme: string;
 };
 
-export enum PageRoutes {
-  CATALOG_PAGE = '/',
-  CART_PAGE = '/cart',
-  NOTFOUND_PAGE = '*',
-}
-
 export interface Product {
   id: number;
   title: string;
@@ -30,10 +24,3 @@ export enum SortOptions {
   TitleUp = 'Title A-Z',
   TitleDown = 'Title Z-A',
 }
-
-export const SORT_OPTIONS: SortOptions[] = [
-  SortOptions.PriceUp,
-  SortOptions.PriceDown,
-  SortOptions.TitleUp,
-  SortOptions.TitleDown,
-];

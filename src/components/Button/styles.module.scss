@@ -1,26 +1,47 @@
-.apply {
-  background-color: $color-success;
-}
-
-.cancel {
-  background-color: $color-error;
-}
-
 .button {
   width: 100%;
+
   padding: $spacing-16;
   background-color: $color-hover;
-  color: $color-text-primary;
+  color: $color-success-text;
   border: none;
   border-radius: $radius-40;
   flex-shrink: 0;
-
   cursor: pointer;
   transition: background-color $transition;
+
+  &.apply {
+    background-color: $color-success;
+  }
+
+  &.cancel {
+    background-color: $color-error;
+  }
 
   &:disabled {
     background-color: $color-disabled;
     cursor: not-allowed;
     opacity: 0.6;
+  }
+}
+
+.big {
+  padding: $spacing-16 $spacing-20;
+  font-size: $font-size-16;
+}
+
+.small {
+  width: $spacing-32;
+  height: $spacing-32;
+  border-radius: $radius-50;
+  padding: 0;
+  font-size: $font-size-20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $transition;
+
+  &:hover {
+    font-size: $font-size-28;
   }
 }

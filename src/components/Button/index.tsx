@@ -1,8 +1,9 @@
 import styles from './styles.module.scss';
-import { ButtonType } from './types';
+import { ButtonSize, ButtonType } from './types';
 
 export default function Button({
   type,
+  size = ButtonSize.BIG,
   onClick,
   children,
   disabled,
@@ -10,7 +11,7 @@ export default function Button({
   return (
     <>
       <button
-        className={`${styles.button} ${styles[type]}`}
+        className={`${styles[type]} ${styles.button} ${styles[size]}`}
         onClick={onClick}
         disabled={disabled}
       >

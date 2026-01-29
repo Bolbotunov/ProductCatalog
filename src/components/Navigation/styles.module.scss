@@ -35,6 +35,7 @@
     text-decoration: none;
     transition: $transition;
     color: var(--color-text);
+    gap: $spacing-12;
 
     &::after {
       content: '';
