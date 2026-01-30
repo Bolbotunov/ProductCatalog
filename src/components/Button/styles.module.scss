@@ -7,11 +7,15 @@
   border-radius: $radius-40;
   flex-shrink: 0;
   cursor: pointer;
-  transition: background-color $transition;
+  transition: $transition;
 
   &.apply {
     background-color: $color-success;
     transition: background-color $transition;
+    &:not(:disabled):hover {
+      background-color: var(--color-hover);
+      color: var(--color-text);
+    }
   }
 
   &:disabled {
