@@ -4,9 +4,7 @@
 
 ---
 
-## Demo
-
-https://bolbotunov-catalog.netlify.app/
+## [Deploy](https://bolbotunov-catalog.netlify.app/)
 
 ## Функциональность
 
