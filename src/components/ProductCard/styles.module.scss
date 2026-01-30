@@ -1,0 +1,124 @@
+.card {
+  display: flex;
+  height: 480px;
+  flex-direction: column;
+  background-color: $color-background-card;
+  color: $color-text-primary;
+  border: 1px solid $color-border-card;
+  border-radius: $radius-40;
+  overflow: hidden;
+  max-width: $layout-card-width;
+  margin: $spacing-20 0;
+  width: 100%;
+  font-size: $font-size-16;
+  transition: $transition;
+
+  @media (max-width: $breakpoints-mobile-large) {
+    font-size: $font-size-12;
+    margin: $spacing-20 0;
+  }
+
+  &:hover {
+    border: 1px solid $color-success;
+    cursor: pointer;
+  }
+  &__image-wrapper {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: $spacing-8;
+  }
+
+  &__image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 $spacing-16;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $breakpoints-tablet-large) {
+      padding: $spacing-8;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-16;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 1.2;
+
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-8;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__description {
+    height: 60px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    max-height: calc(1.5em * 3);
+    font-size: $font-size-12;
+    font-weight: $font-weight-light;
+    margin-bottom: $spacing-16;
+    color: var(--color-text-hover);
+    overflow: hidden;
+
+    @media (max-width: $breakpoints-mobile) {
+      -webkit-line-clamp: 2;
+      margin-bottom: $spacing-8;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-16;
+    flex-shrink: 0;
+  }
+
+  &__price {
+    font-weight: $font-weight-bold;
+    color: var(--color-text);
+  }
+
+  &__stock-status {
+    padding: $spacing-4;
+    border-radius: $radius-10;
+    font-weight: $font-weight-bold;
+    color: $color-success-text;
+    font-size: $font-size-12;
+    @media (max-width: $breakpoints-tablet) {
+      font-size: $font-size-10;
+    }
+
+    &--available {
+      background-color: $color-success;
+      animation: stockPulse 1.5s infinite ease-out;
+    }
+
+    &--unavailable {
+      background-color: $color-error;
+    }
+  }
+}
+
+@keyframes stockPulse {
+  0% {
+    box-shadow: 0 0 0px 0px rgba($color-success, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0px 8px rgba($color-success, 0);
+  }
+}

@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight-light;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: $color-background;
+  color: $color-text-primary;
+  transition: background-color $transition;
+}
+
+.appContainer {
+  @include mixins.flexCenter();
+
+  flex-direction: column;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  flex: 1;
+  max-width: $layout-container-1440;
+  padding: 0 $spacing-96;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: $breakpoints-mobile) {
+    padding: 0 $spacing-16;
+  }
+}
+
+h1 {
+  font-size: $font-size-28;
+  @media (max-width: $breakpoints-mobile) {
+    font-size: $font-size-20;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
