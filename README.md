@@ -10,27 +10,27 @@ React-based mini-application for browsing a product catalog and managing a shopp
 
 ### Product Catalog
 
-**Product Grid:** Items displayed as cards.
-**Search:** Real-time search by title with debounce optimization.
-**Filtering:** Category-based filtering.
-**Sorting:** Sort by price or name.
-**Pagination:** 12 products per page.
-**Empty State:** Visual feedback when no products are found.
+- **Product Grid:** Items displayed as cards.
+- **Search:** Real-time search by title with debounce optimization.
+- **Filtering:** Category-based filtering.
+- **Sorting:** Sort by price or name.
+- **Pagination:** 12 products per page.
+- **Empty State:** Visual feedback when no products are found.
 
 ### Shopping Cart
 
-**Management:** Add, remove, or adjust item quantities.
-**Total Calculation:** Real-time calculation of the total price.
-**Cart Badge:** Visual indicator of the total item count in the header.
-**Persistence:** Cart data is saved to localStorage
+- **Management:** Add, remove, or adjust item quantities.
+- **Total Calculation:** Real-time calculation of the total price.
+- **Cart Badge:** Visual indicator of the total item count in the header.
+- **Persistence:** Cart data is saved to localStorage
 
 ### UI/UX
 
-**Responsive Design:** Fully adaptive for desktop and mobile devices.
-**Interactive States:** Disabled states for buttons during actions.
-**Dark Mode:** Support for dark and light themes.
-**Toast Notifications:** User feedback for actions.
-**Skeleton Loaders:** Smooth loading states.
+- **Responsive Design:** Fully adaptive for desktop and mobile devices.
+- **Interactive States:** Disabled states for buttons during actions.
+- **Dark Mode:** Support for dark and light themes.
+- **Toast Notifications:** User feedback for actions.
+- **Skeleton Loaders:** Smooth loading states.
 
 ---
 
