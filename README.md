@@ -36,15 +36,15 @@ React-based mini-application for browsing a product catalog and managing a shopp
 
 ## Tech Stack
 
-**React 19**: Functional components and hooks.
-**TypeScript**: Strict typing for better maintainability.
-**Redux Toolkit**: Cart state management.
-**React Query**: Data fetching from FakeStore API.
-**React Router**: Client-side navigation.
-**SCSS Modules**: Scoped and modular styling.
-**Jest + React Testing Library**: Unit testing.
-**Husky / lint-staged / commitlint**: Git hooks for code quality.
-**Prettier / ESLint**: Code formatting and linting.
+- **React 19**: Functional components and hooks.
+- **TypeScript**: Strict typing for better maintainability.
+- **Redux Toolkit**: Cart state management.
+- **React Query**: Data fetching from FakeStore API.
+- **React Router**: Client-side navigation.
+- **SCSS Modules**: Scoped and modular styling.
+- **Jest + React Testing Library**: Unit testing.
+- **Husky / lint-staged / commitlint**: Git hooks for code quality.
+- **Prettier / ESLint**: Code formatting and linting.
 
 ---
 
