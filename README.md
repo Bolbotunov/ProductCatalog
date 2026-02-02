@@ -78,6 +78,7 @@ yarn lint
 
 ### Project structure
 
+```
 src/
 ├── api/
 │   ├── getResponse.ts
@@ -132,3 +133,4 @@ src/
 │   └── sortProducts.ts
 ├── main.tsx
 └── index.html
+```
