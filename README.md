@@ -1,67 +1,136 @@
 # Product Catalog
 
-Мини‑приложение на React для просмотра каталога товаров и управления корзиной.
+React-based mini-application for browsing a product catalog and managing a shopping cart.
 
 ---
 
 ## [Deploy](https://bolbotunov-catalog.netlify.app/)
 
-## Функциональность
+## Features
 
-### Каталог товаров
+### Product Catalog
 
-- Список товаров в виде карточек
-- Поиск по названию (debounce)
-- Фильтрация по категориям
-- Сортировка (по цене, по названию)
-- Пагинация (12 товаров на страницу)
-- Пустое состояние
+- **Product Grid:** Items displayed as cards.
+- **Search:** Real-time search by title with debounce optimization.
+- **Filtering:** Category-based filtering.
+- **Sorting:** Sort by price or name.
+- **Pagination:** 12 products per page.
+- **Empty State:** Visual feedback when no products are found.
 
-### Корзина
+### Shopping Cart
 
-- Добавление товаров
-- Увеличение/уменьшение количества
-- Удаление товара
-- Подсчёт общей стоимости
-- Badge с количеством товаров
-- Сохранение корзины в `localStorage`
+- **Management:** Add, remove, or adjust item quantities.
+- **Total Calculation:** Real-time calculation of the total price.
+- **Cart Badge:** Visual indicator of the total item count in the header.
+- **Persistence:** Cart data is saved to localStorage
 
 ### UI/UX
 
-- Адаптивная вёрстка (desktop/mobile)
-- Disabled‑состояния кнопок
-- Dark mode
-- Toast‑уведомления
-- Skeleton‑загрузчики
+- **Responsive Design:** Fully adaptive for desktop and mobile devices.
+- **Interactive States:** Disabled states for buttons during actions.
+- **Dark Mode:** Support for dark and light themes.
+- **Toast Notifications:** User feedback for actions.
+- **Skeleton Loaders:** Smooth loading states.
 
 ---
 
-## 🛠️ Используемые технологии
+## Tech Stack
 
-- **React 19** — функциональные компоненты и хуки
-- **TypeScript** — строгая типизация
-- **Redux Toolkit** — управление состоянием корзины
-- **React Query** — загрузка данных с FakeStore API
-- **React Router** — маршрутизация
-- **SCSS Modules** — стилизация
-- **Jest + React Testing Library** — unit‑тесты
-- **Husky / lint-staged / commitlint** — контроль качества кода
-- **Prettier / ESLint** — форматирование и линтинг
+- **React 19**: Functional components and hooks.
+- **TypeScript**: Strict typing for better maintainability.
+- **Redux Toolkit**: Cart state management.
+- **React Query**: Data fetching from FakeStore API.
+- **React Router**: Client-side navigation.
+- **SCSS Modules**: Scoped and modular styling.
+- **Jest + React Testing Library**: Unit testing.
+- **Husky / lint-staged / commitlint**: Git hooks for code quality.
+- **Prettier / ESLint**: Code formatting and linting.
 
 ---
 
-## 📦 Установка и запуск
+## Installation and Setup
 
 ```bash
-# Установка зависимостей
+# Install dependencies
 yarn install
 
-# Запуск dev-сервера
+# Run dev server
 yarn dev
 
-# Сборка проекта
+# Build for production
 yarn build
 
-# Запуск тестов
+```
+
+## Testing
+
+```bash
+
 yarn test
+```
+
+## Linting
+
+```bash
+
+yarn lint
+```
+
+### Project structure
+
+```
+src/
+├── api/
+│   ├── getResponse.ts
+│   ├── useCategories.ts
+│   └── useProducts.ts
+├── components/
+│   ├── App/
+│   ├── Burger/
+│   ├── Button/
+│   ├── CartIcon/
+│   ├── CartProductCard/
+│   ├── CatalogFilters/
+│   ├── ContentLayout/
+│   ├── EmptyState/
+│   ├── ErrorBoundary/
+│   ├── ErrorFallback/
+│   ├── Footer/
+│   ├── Header/
+│   ├── Input/
+│   ├── Navigation/
+│   ├── Pagination/
+│   ├── ProductCard/
+│   ├── Select/
+│   ├── Skeleton/
+│   ├── ThemeProvider/
+│   └── ThemeSwitcher/
+├── constants/
+│   ├── api.ts
+│   ├── index.ts
+│   ├── localStorage.ts
+│   ├── sortOptions.ts
+│   ├── theme.ts
+│   └── time.ts
+├── context/
+│   └── ThemeContext.tsx
+├── hooks/
+│   ├── useCart.ts
+│   ├── useCatalog.ts
+│   └── useDebounce.ts
+├── pages/
+│   ├── CartPage/
+│   ├── CatalogPage/
+│   └── NotFoundPage/
+├── store/
+│   ├── cartSlice.tsx
+│   └── store.ts
+├── types/
+│   └── index.ts
+├── utils/
+│   ├── filterProducts.ts
+│   ├── localStorageUtils.ts
+│   └── sortProducts.ts
+├── main.tsx
+└── index.html
 ```
